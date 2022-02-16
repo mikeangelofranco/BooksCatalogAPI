@@ -1,6 +1,7 @@
+using BooksCatalog.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace BooksCatalog.Models {
+namespace BooksCatalog.Contexts {
     public class BookContext : DbContext{
         public BookContext(DbContextOptions options) : base(options)
         {
