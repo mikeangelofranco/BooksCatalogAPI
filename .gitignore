@@ -55,7 +55,6 @@ Version.cpp
 bin/
 *.obj
 *.cache
-*.dll
 *.exe
 *.pdb
 /build/
