@@ -30,5 +30,22 @@ msbuild.log
 msbuild.err
 msbuild.wrn
 
+/build/
+*.suo
+*.user
+_ReSharper.*/
+*.sdf
+bin/
+obj/
+Debug/
+Release/
+*.opensdf
+*.tlog
+*.log
+TestResult.xml
+*.VisualState.xml
+Version.cs
+Version.h
+Version.cpp
 # Visual Studio 2015
 .vs/
