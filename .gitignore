@@ -1,11 +1,11 @@
 # From .NET Core 3.0 you can use the command: `dotnet new gitignore` to generate a customizable .gitignore file
-
+bin/
 *.swp
 *.*~
 project.lock.json
 .DS_Store
 *.pyc
-
+.dll
 # Visual Studio Code
 .vscode
 
@@ -52,3 +52,22 @@ Version.cpp
 **/migrations/**
 !**/migrations
 !**/migrations/__init__.py
+bin/
+*.obj
+*.cache
+*.dll
+*.exe
+*.pdb
+/build/
+*.suo
+*.user
+_ReSharper.*/
+*.sdf
+*.opensdf
+*.tlog
+*.log
+TestResult.xml
+*.VisualState.xml
+Version.cs
+Version.h
+Version.cpp
