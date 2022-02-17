@@ -1,4 +1,4 @@
-namespace BooksCatalog.Models {
+namespace BooksCatalog._Db.Models {
     public class Book {
         public int Id { get; set; }
         public BookCategory Category { get; set; }

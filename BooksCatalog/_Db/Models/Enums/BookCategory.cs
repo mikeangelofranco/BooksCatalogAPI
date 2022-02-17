@@ -1,4 +1,4 @@
-namespace BooksCatalog.Models {
+namespace BooksCatalog._Db.Models {
     public enum BookCategory {
         Action,
         Adventture,

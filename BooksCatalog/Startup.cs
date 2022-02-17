@@ -2,8 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BooksCatalog.Contexts;
-using BooksCatalog.Models;
+using BooksCatalog._Db.Contexts;
+using BooksCatalog._Db.EFStore;
+using BooksCatalog._Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -28,9 +29,12 @@ namespace BooksCatalog
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
             string connectionString = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<BookContext>(opt => opt.UseSqlServer(connectionString));
-            services.AddControllers();
+            services.AddTransient<IBookService, BookService>();
+            services.AddTransient<IBookEfStore, BookEfStore>();
+            services.AddHealthChecks();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
