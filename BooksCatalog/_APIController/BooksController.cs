@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using BooksCatalog._Db.Models;
+using BooksCatalog._DTO;
 using BooksCatalog._Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -26,7 +27,7 @@ namespace BooksCatalog._APIController
         //COMPLETE CRUD OPERATIONS
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Book>>> Get(CancellationToken cancellationToken)
+        public async Task<ActionResult<GetBooksResponse>> Get(CancellationToken cancellationToken)
         {
             try{
                var resp = await _bookSvc.GetBooks(cancellationToken);

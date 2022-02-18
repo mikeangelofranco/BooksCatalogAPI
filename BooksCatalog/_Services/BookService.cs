@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using BooksCatalog._Db.EFStore;
 using BooksCatalog._Db.Models;
+using BooksCatalog._DTO;
 
 namespace BooksCatalog._Services
 {
@@ -15,10 +16,12 @@ namespace BooksCatalog._Services
             _bookStore = bookStore;
         }
 
-        public async Task<IEnumerable<Book>> GetBooks(CancellationToken cancellationToken)
+        public async Task<GetBooksResponse> GetBooks(CancellationToken cancellationToken)
         {
             try{
-                return await _bookStore.GetBooks(cancellationToken);
+                GetBooksResponse resp = new GetBooksResponse(); 
+                resp.data = await _bookStore.GetBooks(cancellationToken);
+                return resp;
             }catch(Exception ex){
                 throw new Exception("Error encountered fetching to store...\nInfo: " + ex.Message + "\n" + ex.StackTrace);
             }
